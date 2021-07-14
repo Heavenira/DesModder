@@ -19,6 +19,9 @@ export function isIllegalASCIIMath(input: string) {
   if (input.search(/\\/) != -1) {
     return false;
   }
+  if (input.search(/\/\//) != -1) {
+    return false;
+  }
   if (input.search(/\n/) != -1) {
     //console.warn("Newline detected");
     return false;
