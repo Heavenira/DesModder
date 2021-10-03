@@ -23,8 +23,8 @@ export function isIllegalASCIIMath(input: string) {
     //console.warn("Newline detected");
     return false;
   }
-  if (input.search(/\{|\}/) != -1) {
-    //console.warn("Curly brackets detected");
+  if (input.search(/(?<=_|\^|\\\w+|\S]){/) != -1) {
+    //console.warn("Function curly bracket detected");
     return false;
   }
   if (input.search(/\/\//) != -1) {
